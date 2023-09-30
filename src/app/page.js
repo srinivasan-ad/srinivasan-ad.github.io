@@ -6,15 +6,21 @@ import ContactList from "./components/ContactList";
 
 
 export default function Home() {
+ 
   const [contacts,setcontacts] = useState([]) ;
-  const LS_KEY = "Contacts"
-  const addContactHandler = (x) => {
+   const addContactHandler = (x) => {
     console.log(x);
     setcontacts([...contacts,x]);
   }
- useEffect(() =>{
-    localStorage.setItem(LS_KEY,JSON.stringify(contacts))
+  useEffect(() =>{
+   
+    if(JSON.parse(localStorage.getItem("LSKEY"))) setcontacts(JSON.parse(localStorage.getItem("LSKEY")));
+},[]);
+ 
+  useEffect(() =>{
+    localStorage.setItem("LSKEY",JSON.stringify(contacts))
 },[contacts]);
+  
 
   return (
     <>

@@ -17,7 +17,7 @@ import React from "react";
              console.log(this.state.number)
             }
             
-            else if (this.state.name === '' || this.state.number ==='' || re.test(this.state.number) || this.state.number > 999999999 || this.state.number < 100000000){
+            else if (this.state.name === '' || this.state.number ==='' || re.test(this.state.number) || this.state.number > 9999999999 || this.state.number < 1000000000){
                 alert('Please check and fill all fields again');
                 return;
             }
